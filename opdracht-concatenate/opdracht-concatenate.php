@@ -6,7 +6,7 @@
 
 	$volledigeNaam	=	$voornaam . ' '. $naam;
 
-	$strlen			= strlen($volledigeNaam);
+	$volledigeNaamLengte			= strlen($volledigeNaam);
 
 
 ?>
@@ -25,7 +25,7 @@
 
 
     	<p><?= $volledigeNaam;?></p>
-    	<p>Aantal karakters in de string: <?= $strlen;?></p>
+    	<p>Aantal karakters in de string: <?= $volledigeNaamLengte;?></p>
         
         <script src="js/main.js"></script>
     </body>
