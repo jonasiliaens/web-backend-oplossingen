@@ -55,10 +55,10 @@ if ($getal == 7)
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>oplossing conditional statements</title>
+        <title>oplossing conditional statements deel 2</title>
     </head>
     <body>
-    	<h1>Oplossing deel 1 Conditional Statements:</h1>
+    	<h1>Oplossing Conditional Statements deel 2:</h1>
 
         <p>De dag die overeenkomt met het getal "<?php echo $getal; ?>" is: <?php echo $dag; ?></p>
         <p>De dag in hoofdletters: <?php echo $dagHoofdletters ?> </p>
