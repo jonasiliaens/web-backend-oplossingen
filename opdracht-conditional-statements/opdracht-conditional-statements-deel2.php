@@ -1,7 +1,8 @@
 
 <?php
-$getal = 1;
-$dag = 'onbekende dag';
+
+	$getal	 =	 1;
+	$dag 	=	 'onbekende dag';
 
 if ( $getal == 1 ) 
     { 
@@ -38,10 +39,11 @@ if ($getal == 7)
 		$dag = 'zondag';
 	}
 
-$dagHoofdletters = strtoupper($dag);
-$dagHoofdlettersUitg = str_replace('A', 'a', $dagHoofdletters);
-$posLaatsteA = strrpos($dagHoofdletters, 'A');
-$dagHoofdlettersZLA = substr_replace($dagHoofdletters, 'a', $posLaatsteA, 1);
+	$dagHoofdletters 		=	 strtoupper($dag);
+	$dagHoofdlettersUitg 	=	 str_replace('A', 'a', $dagHoofdletters);
+	$posLaatsteA 			=	 strrpos($dagHoofdletters, 'A');
+	$dagHoofdlettersZLA 	=	 substr_replace($dagHoofdletters, 'a', $posLaatsteA, 1);
+	
 ?>
 
 

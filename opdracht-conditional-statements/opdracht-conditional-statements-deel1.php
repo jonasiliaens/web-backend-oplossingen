@@ -1,7 +1,8 @@
 
 <?php
-$getal = 5;
-$dag = 'onbekende dag';
+
+	$getal 	= 	5;
+	$dag 	= 	'onbekend';
 
 if ( $getal == 1 ) 
     { 
@@ -48,7 +49,6 @@ if ($getal == 7)
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>oplossing conditional statements</title>
     </head>
