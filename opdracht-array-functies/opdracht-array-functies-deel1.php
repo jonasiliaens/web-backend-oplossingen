@@ -4,9 +4,9 @@
 
 	$aantal 		= count($dieren);
 
-	$tezoekendier 	= 'muis';
+	$tezoekendier 	= 'slang';
 
-	$antwoord 		= array_search($tezoekendier, $dieren)
+	$antwoord 		= in_array ($tezoekendier, $dieren)
 
 
 
@@ -28,13 +28,17 @@
 
     	<h1>Opdracht array functies deel 1:</h1>
 
+        <p>De array van dieren:</p>
+
+        <pre><?php var_dump($dieren) ?></pre>
+
     	<p>Aantal dieren in de array: <?= $aantal ?></p>
 
     	<?php if ($antwoord == true):  ?>
-    		<p>Het dier <?= $tezoekendier ?> is gevonden</p>
+    		<p>Het dier "<?= $tezoekendier ?>" is gevonden</p>
 
     	<?php else: ?>
-    		<p>Het dier <?= $tezoekendier ?> is niet gevonden</p>
+    		<p>Het dier "<?= $tezoekendier ?>" is niet gevonden</p>
 
     	<?php endif ?>
       

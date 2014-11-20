@@ -6,7 +6,8 @@
 
     $gesorteerd         = $zonderduplicaten;
 
-    sort($gesorteerd);
+
+    rsort($gesorteerd);
 
 ?>
 
