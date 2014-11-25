@@ -1,12 +1,34 @@
-dit is mijn eerste php bestand
+<?php
+	
+	$array = array('string1', 'string2', 'string3', 'string4');
+
+
+	for ($key = 0; $key < count($array); ++$key)
+	{
+		echo $array [ $key ];
+	}
+
+
+
+?>
 
 
 
 
 
 
-<h1><?php
+<!doctype html>
+<html>
 
-	echo 'Hallo World!';
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Test document</title>
+    </head>
 
-?></h1>
+    <body>
+        
+
+
+    </body>
+</html>
