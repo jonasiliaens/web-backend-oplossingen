@@ -19,6 +19,8 @@
 
 	$getallenKommaSpatie = implode(', ', $getallenreeks);
 
+	//kan ook met join ipv implode
+
 
 	$teller = 0;
 

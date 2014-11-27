@@ -59,7 +59,7 @@
     			<tr>
 
     				<?php foreach($value as $product): ?>
-    					<td class="<?= (($product) % 2 > 0) ? ' ' : 'even' ?>"><?php echo $product ?></td>
+    					<td class="<?= (($product) % 2 > 0) ? ' ' : 'even' ?>"><?= $product ?></td>
         			<?php endforeach ?>
 
         			

@@ -2,6 +2,8 @@
 
 	$getallenreeks = array();
 
+	$maxGetal = 100;
+
 	$getallenKommaSpatie = '';
 
 	$getallen3	= '';
@@ -11,7 +13,7 @@
 
 	
 
-	for ($teller = 0; $teller < 101; ++$teller )
+	for ($teller = 0; $teller <= $maxGetal; ++$teller )
 	{
 		$getallenreeks [] = $teller;
 	}
