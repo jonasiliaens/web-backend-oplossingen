@@ -15,10 +15,11 @@
 
 		$container = array();
 
-		if ($raakkans < 7)
+		if ($raakkans < 6)
 		{
 			$pigHealth = $pigHealth - 1;
-			if ($pigHealth < 2)
+
+			if ($pigHealth <= 1)
 			{
 				if ($pigHealth == 0)
 				{
@@ -56,8 +57,6 @@
 	function launchAngryBird()
 	{
 		global $raak;
-
-		$winst = '';
 
 		global $pigHealth;
 
@@ -98,7 +97,7 @@ launchAngryBird();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Opdracht functies gevorderd deel 2 (Angry Birds)</title>
         <style>
-        	ul li 
+        	li 
         	{
         		list-style-type: none;
         		padding: 3px;

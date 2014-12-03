@@ -8,7 +8,7 @@
 
 	$argument3 		=	'a';
 
-	function functie1($haystack, $needle)
+	function functie1($haystack, $needle) // hier zijn de $haystack en $ needle parameters
 	{
 		$count 				= 	strlen($haystack);
 		$aantal 			= 	substr_count($haystack, $needle);
@@ -39,7 +39,7 @@
 	}
 
 
-	$functieresultaat1 = functie1($md5HashKey, $argument1);
+	$functieresultaat1 = functie1($md5HashKey, $argument1); //Hier zijn de $md5HashKey en $argument1 argumenten
 
 	$functieresultaat2 = functie2($argument2);
 

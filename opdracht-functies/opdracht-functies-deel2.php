@@ -13,7 +13,7 @@
 
         foreach ($array as $key => $value) 
         {
-            $container [] = 'array['.$key.'] heeft als waarde '.$value;
+            $container [] = 'array ['.$key.'] heeft als waarde '.$value;
         }
 
 		return $container;
@@ -54,6 +54,12 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <title>Opdracht functies deel 2</title>
+        <style>
+            li
+            {
+                list-style-type: none;
+            }
+        </style>
     </head>
 
     <body>
