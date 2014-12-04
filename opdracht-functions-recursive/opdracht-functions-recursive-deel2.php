@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 	$basisBedrag = 100000;
 
@@ -6,26 +6,32 @@
 
 	$percent = 8;
 
-	function renteBereken ($configArray)
-	{ 
-		
-		if ($configArray ['counter'] != $configArray ['aantalJaar'])
+	function renteBereken ($dataArray)
+	{
+
+		if ($dataArray['teller'] != $dataArray['looptijd'])
 		{
-			$rente = round(($configArray['bedrag']/100) * $configArray ['percent'])
-			$configArray['rente'][] = $rente;
-			$configArray['bedrag'] = $configArray['bedrag'] + $rente ;
-			$configArray['counter'] = $configArray['counter'] +1;
-			return renteBereken($configArray);
+			$rente = round(($dataArray['bedrag']/100) * $dataArray['percent']);
+			$dataArray['bedrag'] += $rente;
+			++$dataArray['teller'];
+			$dataArray ['historiek'] [] = array('bedrag' => $dataArray['bedrag'], 
+												'teller' => $dataArray['teller'], 
+												'looptijd' => $dataArray['looptijd'], 
+												'rente' => $rente);
+			
+			return renteBereken($dataArray);
 		}
 		else
 		{
-			return $configArray;
+			return $dataArray;
 		}
 	}
 
-	$einde = renteBereken (array('bedrag' => $basisBedrag, 'aantalJaar' => $jarenSparen, 'percent' => $percent, 'counter' => 0));
-
-var_dump($einde)
+	$einde = renteBereken (array('bedrag' => $basisBedrag, 
+									'looptijd' => $jarenSparen,
+									'percent' => $percent, 
+									'teller' => 0, 
+									'historiek' => array()));
 	
 
 ?>
@@ -35,14 +41,14 @@ var_dump($einde)
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Opdracht functions recursive</title>
+        <title>Opdracht functions recursive deel 2</title>
     </head>
     <body>
-    	<h1>Opdracht functions recursive</h1>
-    	<p>Hans spaart een bedrag van <?= $basisBedrag ?> euro voor <?= $jarenSparen ?> jaar aan een rente van <?= $percent ?>% per jaar.</p>
+    	<h1>Opdracht functions recursive deel 2</h1>
+    	<p>Hans spaart een bedrag van <?= $basisBedrag ?> € voor <?= $jarenSparen ?> jaar aan een rente van <?= $percent ?>% per jaar.</p>
     		<ul>
-    			<?php foreach ($einde as $value): ?>
-    		    	<li>Na <?= $value['counter'] ?> jaar sparen heeft hans een winst van <?= $value['rente'] ?> euro en een totaalbedrag van <?= $value['bedrag'] ?> euro</li>
+    			<?php foreach ($einde ['historiek'] as $value): ?>
+    		    	<li>Na <?= $value['teller'] ?> jaar sparen heeft hans een winst van <?= $value['rente'] ?> € en een totaalbedrag van <?= $value['bedrag'] ?> €</li>
     		    <?php endforeach ?>
     		</ul>
 

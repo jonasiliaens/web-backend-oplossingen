@@ -39,10 +39,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Opdracht functions recursive</title>
+        <title>Opdracht functions recursive deel 1</title>
     </head>
     <body>
-    	<h1>Opdracht functions recursive</h1>
+    	<h1>Opdracht functions recursive deel 1</h1>
     	<p>Hans spaart een bedrag van <?= $basisBedrag ?> euro voor <?= $jarenSparen ?> jaar aan een rente van <?= $percent ?>% per jaar.</p>
     		<ul>
     			<?php foreach ($einde as $value): ?>
