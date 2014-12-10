@@ -1,6 +1,6 @@
 <?php
 
-	$password 	=	'azerty';
+	$password 	=	'azert';
 
 	$username 	=	'Jonas';
 
@@ -8,7 +8,7 @@
 
 	if (isset($_POST ['verzenden']))
 	{
-		if ($_POST['gebruiker'] == $username && $_POST['paswoord'] == $password)
+		if ($_POST['gebruiker'] == $username && $_POST['paswoord'] == $password) //beter eerst opvangen in een variabele
 		{
 			$boodschap = 'U bent ingelogd.';
 		}
