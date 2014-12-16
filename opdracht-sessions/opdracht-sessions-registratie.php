@@ -1,5 +1,16 @@
 <?php
 
+    session_start();
+
+    if ( isset( $_GET['session'] ) )
+    {
+        if ( $_GET['session']  == 'destroy' )
+        {
+            session_destroy( );
+            header( 'location: opdracht-sessions-registratie.php' );
+        }
+    }
+
 
 
 ?>
@@ -37,7 +48,11 @@
     </head>
     <body>
     	<h1>Deel 1: Registratiegegevens</h1>
-        <form action="<?= $_SERVER[ 'PHP_SELF' ] ?>" method="POST">
+
+        <a href="opdracht-sessions-registratie.php?session=destroy">Vernietig sessie</a>
+
+
+        <form action="opdracht-sessions-adres.php" method="POST">
 		    	<label for="email">e-mail
 		    		<input type="text" name="email" id="email">
 		    	</label>
