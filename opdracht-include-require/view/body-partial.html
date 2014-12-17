@@ -1,0 +1,13 @@
+    	<section>
+    		<h2>Nieuws</h2>
+
+    		<section class="group">
+    			<?php foreach ($artikels as $key => $value): ?>
+    				<article class="artikels">
+    					<h2><?= $value['title'] ?></h2>
+    					<p><?= $value['body'] ?></p>
+    				</article>
+    			<?php endforeach ?>
+    		</section>
+    	</section>
+    	

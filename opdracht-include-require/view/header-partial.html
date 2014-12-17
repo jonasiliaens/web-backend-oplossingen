@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Opdracht Include Require</title>
+        <style>
+
+            .group:after 
+            {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .artikels
+            {
+                float:left;
+                width:288px;
+                margin:16px;
+                padding:16px;
+                box-sizing:border-box;
+                background-color:#EEEEEE;
+            }
+
+
+        	body
+        	{
+        		width: 1024px;
+        		margin: auto;
+        	}
+
+			header
+        	{
+        		background-color: grey;
+                height: 40px;
+        	}
+
+        	nav h3
+        	{
+                padding-left: 10px;
+                color: white;
+        		float: left;
+                margin-top: 9px;
+        	}
+
+        	nav ul li
+        	{
+        		display: inline-block;
+        		padding: 15px;
+                margin-top: -4px;
+                float: right;
+        	}
+
+        	a
+        	{
+        		text-decoration: none;
+        		color: white;
+        	}
+
+        	footer p
+        	{
+        		text-align: center;
+        		background-color: lightgreen;
+                padding: 5px;
+                color: white;
+        	}
+
+        	
+
+        </style>
+    </head>
+    <body>
+    	<header>
+    		<nav class="group">
+                <h3>Daily PHP</h3>
+    		    <ul>
+    		        <li><a href="index.php?page=body">Nieuws</a></li>
+    		     	<li><a href="index.php?page=redactie">Onze Redactie</a></li>
+    		     	<li><a href="index.php?page=contact">Contact</a></li>
+    		    </ul>
+    		</nav>
+    	</header>
