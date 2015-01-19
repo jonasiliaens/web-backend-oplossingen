@@ -1,4 +1,5 @@
 <?php
+
 	function my_autoloader ($class_name)
 	{
 		include ('classes/'.$class_name.'.php');
