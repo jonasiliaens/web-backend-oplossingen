@@ -8,11 +8,11 @@
 		$message 	=	'Connectie met de database is geslaagd';
 
 		$queryString 		=	'SELECT * 
-							FROM `bieren` 
-    						INNER JOIN brouwers 
-    						ON bieren.brouwernr = brouwers.brouwernr 
-    						WHERE bieren.naam LIKE "Du%" 
-    						AND brouwers.brnaam LIKE "%a%"';
+                        FROM `bieren` 
+    						          INNER JOIN brouwers 
+    						          ON bieren.brouwernr = brouwers.brouwernr 
+    						        WHERE bieren.naam LIKE "Du%" 
+    						        AND brouwers.brnaam LIKE "%a%"';
 
    		$statement 	=	$db->prepare($queryString);
 
@@ -50,17 +50,17 @@
         <title>Opdracht CRUD Query - Deel 1</title>
         <style>
         	table
-			{
-			    margin:8px 0;
-			    border:1px solid lightgrey;
-			    border-collapse: collapse;
-			}
+          {
+            margin:8px 0;
+            border:1px solid lightgrey;
+            border-collapse: collapse;
+          }
 			
-			td, th
-			{
-			    padding:8px;
-			    border:1px solid lightgrey;
-			}
+          td, th
+          {
+            padding:8px;
+            border:1px solid lightgrey;
+          }
         </style>
     </head>
     <body>
