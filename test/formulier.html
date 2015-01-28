@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Validatie Formulier</title>
+	<link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+
+<body>
+	<div class="page">
+	<form action="form.php" method="POST" name="formulier" onsubmit="return(valideren())">
+
+	<fieldset>
+		<legend>Persoonlijke gegevens</legend>
+
+			<div id="fbpersoon"></div>
+
+		<label>Naam</label>
+		<input type="text" name="fnaam"></input>
+	
+		<label>Postcode</label>
+		<input type="text" name="fpostcode"></input>
+
+		<label>E-mail</label>
+		<input type="text" name="femail"></input>
+
+	</fieldset>
+
+	<fieldset>
+
+		<legend>Mijn Huisdier</legend>
+
+			<div id="fbdier"></div>
+
+		<label>Naam</label>
+		<input type="text" name="fnaamdier"></input>
+	
+		<label>Ras</label>
+		<input type="text" name="fras"></input>
+
+		<label>Leeftijd</label>
+		<input type="text" name="fleeftijddier"></input>
+
+	</fieldset>
+
+		<input type="submit" value="Submit" name="submit"></input>
+
+	</form>
+	</div>
+	<script type="text/javascript">
+		function emailControleren()
+		{
+			var mailControle = document.formulier.femail.value; //inhoud van veld in var steken
+
+			//indexOf zoekt naar eertse karakter, TELT VANAF 0!
+			var aapWaar = mailControle.indexOf("@"); //kijken waar mijn @ staat
+
+			//lastIndexOf zoekt naar het laatste karakter
+			var puntWaar = mailControle.lastIndexOf("."); //kijken waar mijn punt staat
+
+			//de positie van @ moet minstens 1 zijn en min 2 karakters tussen @ en .
+			if (aapWaar < 1 || (puntWaar - aapWaar < 3))
+			{
+				document.formulier.femail.focus();
+				document.getElementById("fbpersoon").style.display="block";
+				document.getElementById("fbpersoon").innerHTML="Het mail adres is niet juist";
+				return false;
+			}
+			document.getElementById("fbpersoon").style.display="none";
+			return true;
+		}
+
+		function valideren()
+		{
+			/*alert('start met valideren');*/
+
+			if (document.formulier.fnaam.value=="") 
+			{
+				document.formulier.fnaam.focus();
+				document.getElementById("fbpersoon").style.display="block";
+				document.getElementById("fbpersoon").innerHTML="Naam moet ingevuld worden";
+				return false;
+			}
+
+			if (document.formulier.fpostcode.value=="") 
+			{
+				document.formulier.fpostcode.focus();
+				document.getElementById("fbpersoon").style.display="block";
+				document.getElementById("fbpersoon").innerHTML="Postcode moet ingevuld worden";
+				return false;
+			}
+
+			if (document.formulier.fpostcode.value.length!=4) 
+			{
+				document.formulier.fpostcode.focus();
+				document.getElementById("fbpersoon").style.display="block";
+				document.getElementById("fbpersoon").innerHTML="Postcode moet uit 4 cijfers bestaan";
+				return false;
+			}
+
+			if (isNaN(document.formulier.fpostcode.value))
+			{
+				document.formulier.fpostcode.focus();
+				document.getElementById("fbpersoon").style.display="block";
+				document.getElementById("fbpersoon").innerHTML="Postcode mag alleen maar cijfers bevatten, bv: 2800";
+				return false;
+			}
+
+			if (document.formulier.femail.value=="") 
+			{
+				document.formulier.femail.focus();
+				document.getElementById("fbpersoon").style.display="block";
+				document.getElementById("fbpersoon").innerHTML="E-mail moet ingevuld worden";
+				return false;
+			} 
+
+			else 
+			{
+				//controle op e-mail-formaat
+				var emailOk = emailControleren();
+				if (emailOk == false)
+				{
+					return false;
+				}
+			}
+
+			if (document.formulier.fnaamdier.value=="") 
+			{
+				document.formulier.fnaamdier.focus();
+				document.getElementById("fbdier").style.display="block";
+				document.getElementById("fbdier").innerHTML="Naam moet ingevuld worden";
+				return false;
+			}
+
+			if (document.formulier.fras.value=="") 
+			{
+				document.formulier.fras.focus();
+				document.getElementById("fbdier").style.display="block";
+				document.getElementById("fbdier").innerHTML="Ras moet ingevuld worden";
+				return false;
+			}
+
+			if (document.formulier.fleeftijddier.value=="") 
+			{
+				document.formulier.fleeftijddier.focus();
+				document.getElementById("fbdier").style.display="block";
+				document.getElementById("fbdier").innerHTML="Leeftijd moet ingevuld worden";
+				return false;
+			}
+
+			if (isNaN(document.formulier.fleeftijddier.value))
+			{
+				document.formulier.fleeftijddier.focus();
+				document.getElementById("fbdier").style.display="block";
+				document.getElementById("fbdier").innerHTML="Leeftijd mag alleen maar cijfers bevatten, bv: 12";
+				return false;
+			}
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'funsizedregular';
+    src: url('../fonts/funsized-webfont.eot');
+    src: url('../fonts/funsized-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/funsized-webfont.woff2') format('woff2'),
+         url('../fonts/funsized-webfont.woff') format('woff'),
+         url('../fonts/funsized-webfont.ttf') format('truetype'),
+         url('../fonts/funsized-webfont.svg#funsizedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/roboto-light-webfont.eot');
+    src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-light-webfont.woff2') format('woff2'),
+         url('../fonts/roboto-light-webfont.woff') format('woff'),
+         url('../fonts/roboto-light-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.page{
+	margin: 0 auto;
+	width: 400px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#fbpersoon{
+	display: none;
+	width: 260px;
+	padding: 30px;
+	background-color: #E377D2;
+	border: 3px solid red;
+	margin-bottom: 30px;
+}
+
+#fbdier{
+	display: none;
+	width: 260px;
+	padding: 30px;
+	background-color: #E377D2;
+	border: 3px solid red;
+	margin-bottom: 30px;
+}
+
+h1{
+	font-family: 'funsizedregular';
+	font-size: 28px;
+	color: #E33721;
+}
+
+form{
+	font-family: arial;
+	font-size: 16px;
+}
+
+fieldset{
+	border:1px solid #000300;
+	padding: 30px;
+	margin: 40px 0px 0px 0px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+legend{
+	font-family: 'funsizedregular';
+	font-size: 18px;
+	color: #E33721;
+}
+
+input{
+	font-family: 'robotolight';
+	font-size: 16px;
+	display: block;
+	height: 30px;
+	width: 200px;
+	margin: 10px 0px 30px 0px;
+	padding: 10px;
+	border:1px solid #EFEEE4;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+	-o-transition: 2s;
+	transition: 2s;
+}
+
+input:hover{
+	background-color: #00E000;
+}
+
+input:focus{
+	color:#144401;
+	background-color: #ACC3B5;
+	border:none;
+}
+}
+
+label{
+	font-family: 'robotolight';
+	margin-bottom: 15px;
+}
+
+input[type=submit]{
+	cursor: pointer;
+	padding: 10px;
+	line-height: 15px;
+	background-color: #666;
+	color: #000;
+	text-transform: uppercase;
+	border:none;
+	-webkit-transition: 2s;
+	-moz-transition: 2s;
+	-o-transition: 2s;
+	transition: 2s;
+}
+
+input[type=submit]:hover{
+	background-color: red;
+	color: #fff;
+}
