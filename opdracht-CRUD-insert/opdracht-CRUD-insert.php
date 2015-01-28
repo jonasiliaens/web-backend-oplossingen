@@ -56,7 +56,7 @@
 			$errorMessage 	=	'Er ging iets mis, foutmelding: ' . $e->getMessage();
 		}
 	}
-	
+
 ?>
 
 
