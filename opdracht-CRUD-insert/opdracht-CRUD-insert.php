@@ -18,20 +18,20 @@
 			$gemeente 	=	$_POST['gemeente'];
 			$omzet 		=	$_POST['omzet'];
 	
-			$queryString 	=	'INSERT INTO brouwers
+			$insertQuery 	=	'INSERT INTO brouwers
         	     							(brnaam,
         	     							adres,
         	     							postcode,
         	     							gemeente,
         	     							omzet)
-								VALUES
+									VALUES
 											(:naam,
         	    							 :adres,
         	    							 :postcode,
         	    							 :gemeente,
         	    							 :omzet)';
 		
-			$statement 		=	$db->prepare($queryString);
+			$statement 		=	$db->prepare($insertQuery);
 	
 			$statement->bindValue(':naam', $naam);
 			$statement->bindValue(':adres', $adres);
@@ -66,7 +66,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Opdracht CRUD Insert</title>
-        <link rel="author" href="humans.txt">
         <style>
         	body
         	{
