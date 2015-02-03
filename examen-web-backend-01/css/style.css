@@ -1,0 +1,55 @@
+body {
+       font-family: sans-serif;
+       color: #333333;
+}
+       	
+button {
+      	position: relative;
+		border: 0;
+		background-color: transparent;
+		margin: 0;
+		font-size: 20px;
+		padding: 0 0 0 22px;
+		cursor: pointer;
+		outline-width: 0;
+}
+
+li {
+	list-style-type: none;
+	margin: 0px;
+}
+
+.fout {
+	display: inline-block;
+	background-color: #FF0000;
+	color: #FFFFFF;
+	font-size: 18px;
+	padding: 10px;
+	margin: 0px;
+	border-radius: 4px;
+}
+
+.todo li {
+	list-style-type: circle;
+}
+
+.tedoen:hover {
+	text-decoration: line-through;
+}
+
+.gedaan {
+	text-decoration: line-through;
+}
+
+.warning {
+	position: absolute;
+	top: 330px;
+	left: 150px;
+	width: 300px;
+	background-color: #FF0000;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 10px;
+	margin: 0px;
+	border-radius: 4px;
+}
