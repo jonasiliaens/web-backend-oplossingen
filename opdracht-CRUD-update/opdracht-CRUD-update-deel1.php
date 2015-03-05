@@ -33,7 +33,7 @@
 
   		$statementDelete->execute();
 
-  		$message 	=	'De brouwer is succesvol verwijderd.';
+  		$message 	=	'De brouwer met id: ' . $deleteBrId . ' is succesvol verwijderd.';
    	}
 
   if (isset($_POST['edit']))
@@ -93,7 +93,7 @@
 
     $statementUpdate->execute();
 
-    $message  = 'De brouwer is succesvol aangepast.';
+    $message  = 'De brouwer ' . $naam . ' is succesvol aangepast.';
   }
 
   $selectQuery    = 'SELECT * 
