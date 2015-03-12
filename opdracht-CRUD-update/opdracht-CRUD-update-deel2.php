@@ -1,6 +1,8 @@
 <?php
   session_start();
 	
+  include_once('Database.php');
+
 	define( 'BASE_URL', 'http://' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'PHP_SELF' ] );
 
 	$message 	=	false;
@@ -9,6 +11,8 @@
   $updateValues = '';
 	
 	$db 		=	new PDO('mysql:host=localhost;dbname=bieren', 'root', '');
+
+  $dbInstanceTemp =   new Database( $db );
 
   if (isset($_POST['confirm']))
   {
@@ -24,17 +28,17 @@
 
 	if (isset($_POST['delete']))
    	{
-   	  $deleteBrId   = $_SESSION['brouwerNr'];	
-   		$deleteQuery 	=	'DELETE FROM brouwers 
-  								WHERE brouwernr  = :brouwerId
-  								LIMIT 1';
+   	  $deleteBrouwerId   = $_SESSION['brouwerNr'];	
+   		$deleteQueryString 	=	'DELETE FROM brouwers 
+  								            WHERE brouwernr  = :brouwerId
+  								            LIMIT 1';
 
-  		$statementDelete 	=	$db->prepare($deleteQuery);
-  		$statementDelete->bindValue(':brouwerId', $deleteBrId);
+      $deleteBrouwerPlaceholders    =   array(':brouwerId' => $deleteBrouwerId);
 
-  		$statementDelete->execute();
+      $dbInstanceTemp->delete( $deleteQueryString, 
+                                $deleteBrouwerPlaceholders);
 
-  		$message 	=	'De brouwer met id: ' . $deleteBrId . ' is succesvol verwijderd.';
+  		$message 	=	'De brouwer met id: ' . $deleteBrouwerId . ' is succesvol verwijderd.';
    	}
 
   if (isset($_POST['edit']))
@@ -42,22 +46,15 @@
     $editForm   = true;
     $editBrId   = $_POST['edit'];
 
-    $selectEditQuery  = 'SELECT *
+    $editQueryString  = 'SELECT *
                           FROM brouwers 
                           WHERE brouwernr  = :brouwerId
                           LIMIT 1';
 
-    $statementEdit  = $db->prepare($selectEditQuery);
-    $statementEdit->bindValue(':brouwerId', $editBrId);
+    $editQueryPlaceholders    =   array(':brouwerId' => $editBrId);
 
-    $statementEdit->execute();
-
-    $brouwerToEdit  = array();
-
-    while ($row = $statementEdit->fetch(PDO::FETCH_ASSOC))
-    {
-      $brouwerToEdit[]   = $row;
-    }
+    $brouwerToEdit  = $dbInstanceTemp->query($editQueryString,
+                                            $editQueryPlaceholders);
   }
 
   if (isset($_POST['cancelUpdate']))
@@ -70,73 +67,48 @@
                 FROM `brouwers` 
                 WHERE 1';
 
-  $statementSelect  = $db->prepare($selectQuery);
+  $brouwers = $dbInstanceTemp->query($selectQuery);
 
-  $statementSelect->execute();
+  $brouwersKolomnamen = array_keys( $brouwers[0] );
+  
+  foreach ($brouwersKolomnamen as $key => $value) 
+  {
+    $updateValues = $updateValues . '`' . $value . '`' . '=:' . $value . ', ';
+  }
 
-  $brouwers   = array();
-
-  while ($row = $statementSelect->fetch(PDO::FETCH_ASSOC))
-      {
-        $brouwers[]   = $row;
-      }
-
-    $brouwersKolomnamen = array_keys( $brouwers[0] );
-    
-
-    
-
-    foreach ($brouwersKolomnamen as $key => $value) {
-      $updateValues = $updateValues . '`' . $value . '`' . '=:' . $value . ', ';
-    }
-
-    $updateValues = rtrim($updateValues, ', ');
+  $updateValues = rtrim($updateValues, ', ');
     
 
   if (isset($_POST['update']))
   {
     $naam       = $_POST['brnaam'];
+    $id         = $_POST['brouwernr'];
 
-    $nieuweWaardes = array();
+    $placeholders = array();
     $placeholders = array();
 
-    foreach ($_POST as $key => $value) {
-      $nieuweWaardes[':' . $key] = $value;
+    foreach ($_POST as $key => $value) 
+    {
+      $placeholders[':' . $key] = $value;
     }
-    array_pop($nieuweWaardes);
 
-    $updateQuery = 'UPDATE `brouwers` SET ' . $updateValues . ' WHERE brouwernr  = :brouwernr';
+    array_pop($placeholders);
+
+    $updateQueryString = 'UPDATE `brouwers` SET ' . $updateValues . ' WHERE brouwernr  = :brouwernr';
     
+    $dbInstanceTemp->query($updateQueryString, $placeholders);
 
-    $statementUpdate = $db->prepare($updateQuery);
-
-    foreach ($nieuweWaardes as $placeholder => $value) {
-      $statementUpdate->bindValue($placeholder, $value);
-    }
-    
-    $statementUpdate->execute();
-
-    $message  = 'De brouwer ' . $naam . ' is succesvol aangepast.';
+    $message  = 'De brouwer ' . $naam . ' met id ' . $id . ' is succesvol aangepast.';
   }
+
 
   $selectQuery    = 'SELECT * 
                 FROM `brouwers` 
                 WHERE 1';
 
-  $statementSelect  = $db->prepare($selectQuery);
+  $brouwers = $dbInstanceTemp->query($selectQuery);
 
-  $statementSelect->execute();
-
-  $brouwers   = array();
-
-  while ($row = $statementSelect->fetch(PDO::FETCH_ASSOC))
-      {
-        $brouwers[]   = $row;
-      }
-
-    $brouwersKolomnamen = array_keys( $brouwers[0] );
-  
-
+  $brouwersKolomnamen = array_keys( $brouwers[0] );
 ?>
 
 <!doctype html>
