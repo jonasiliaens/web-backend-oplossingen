@@ -109,7 +109,7 @@
 	
 		if ($numeriek) 
 		{
-			$passwordChars['numeriek'] = array(0,1,2,3,4,5,6,7,8,9); // hardcoded array met opeenvolgende cijfers/letters kunnen vervangen worden door (voor bv. cijfers) range(0,9)
+			$passwordChars['numeriek'] = array(0,1,2,3,4,5,6,7,8,9);
 		}	
 			
 		if ($alpha) 
