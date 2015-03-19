@@ -55,18 +55,16 @@
 
     	<form action="process.php" method="POST" enctype="multipart/form-data">
 	    
-	    <ul>
-	        <li>
-	            <label for="picture">Foto Kiezen
-	            	<input type="file" id="picture" name="picture">
-	            </label>
-	        </li>
-	    </ul>
-	    	<input type="submit" name="submit" value="Resizen">
+	     <ul>
+	         <li>
+	             <label for="picture">Foto Kiezen
+	             	<input type="file" id="picture" name="picture">
+	             </label>
+	         </li>
+	     </ul>
+	     	 <input type="submit" name="submit" value="Resizen">
 
 		  </form>
 
-    	
-        
     </body>
 </html>
