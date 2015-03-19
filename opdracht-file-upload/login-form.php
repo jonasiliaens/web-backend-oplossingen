@@ -17,7 +17,7 @@
   {
     $message = 'U bent al ingelogd!';
   
-    $_SESSION['notification']['type'] = 'error';
+    $_SESSION['notification']['type'] = 'notice';
     $_SESSION['notification']['message'] = $message;
     header( 'location: dashboard.php' );
   }

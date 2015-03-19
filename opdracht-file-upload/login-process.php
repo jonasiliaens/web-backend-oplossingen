@@ -24,11 +24,11 @@
 
 		if (empty($user))
 		{
-			$message = 'De gebruiker ' . $email . ' is niet gevonden, gelieve u te registreren!';
+			$message = 'Er is iets mis gelopen, gebruiker en/of wachtwoord komen niet overéén, of u bent nog niet geregistreerd!';
 	
 			$_SESSION['notification']['type'] = 'error';
 			$_SESSION['notification']['message'] = $message;
-			header( 'location: registratie-form.php' );
+			header( 'location: login-form.php' );
 		}
 		else
 		{
