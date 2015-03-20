@@ -28,6 +28,7 @@
         .notification
       	{
       		display: inline-block;
+          margin-left: 40px;
       		padding: 5px;
       		border: 1px solid;
       		border-radius: 5px;
@@ -36,13 +37,15 @@
       	.error
       	{
       		background-color: #FF3333;
-      		border: 1px solid #990000;
+      		border: 1px solid #490005;
+          color: #490005;
       	}
 	
       	.succes
       	{
       		background-color: #99FF33;
-      		border: 1px solid #339900;
+          border: 1px solid #003300;
+      		color: #003300;
       	}
         </style>
     </head>
