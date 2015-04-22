@@ -103,11 +103,6 @@ class TodosController extends Controller {
 			flash()->error('U probeert een todo te verwijderen die niet bestaat');
 		}
 
-		
-
-		
-
-
 		return redirect('todos');
 	}
 

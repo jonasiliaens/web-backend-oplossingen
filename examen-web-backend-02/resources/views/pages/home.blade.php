@@ -3,7 +3,11 @@
 @section('content')
 	<h1>Welkom op de tweede examenopdracht</h1>
 
-	<p>Registreer eerst even om te zien wat de opdracht juist omvat</p>
+	@if (Auth::user())
+		<p>Welkom {{ Auth::user()->name }}. U bent ingelogd en heeft toegang tot het dashboard</p>
+	@else
+		<p>Registreer eerst even om te zien wat de opdracht juist omvat</p>
+	@endif
 		
 	<h2>Opzet</h2>
 	

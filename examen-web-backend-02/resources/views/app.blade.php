@@ -20,6 +20,7 @@
 	<![endif]-->
 </head>
 <body>
+	
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -65,5 +66,6 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>
